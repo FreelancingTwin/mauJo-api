@@ -1,13 +1,44 @@
-/* video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-fullscreen-button {
-  display: none;
-} */
+:root{
+  --primaryColor: #f2ae2c;
+  --secondaryColor: #101010;
+  --customPadding: 1.5rem;
+  --customBorderRadius: 50%,;
+}
 
-.video{
-    height: 50vh;
-    width: 50vw;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+}
+
+body{
+  max-width: 100vw;
+}
+
+img{
+  object-fit: cover;
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.nav{
+  background: var(--secondaryColor);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--customPadding) 0 0;
+  align-items: center;
+  max-height: 15vh;
+  text-decoration: none;
+}
+
+.nav>img{
+  object-fit: cover;
+  max-height: inherit;
 }
