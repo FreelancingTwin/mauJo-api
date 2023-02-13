@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+  
+    <!-- dateRangePicker css cdn for bookings calendar -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- fontawesome cdn for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+      <!-- NAVBAR -->
+    <nav>
+      <img src="./assets/logo.jpg" alt="maujo cafe and hostel logo" />
+      <a href="tel:+" class="contact"
+        ><i class="fa-solid fa-phone"></i> Phone</a
+      >
+    </nav>
+
+    <!-- ABOUT -->
+    <div class="about">
+      <h1>Who we are</h1>
+      <video src="assets/hosts.mp4" type="video/mp4" autoplay="true" loop="true" muted="true" playsInline="true" poster="assets/logo.jpg" class="video"></video>
+    </div>
+
+    <!-- SERVICES/FEATURES -->
+    <div class="services">
+        <h1>What we have</h1>
+        <div class="features">
+            <h1>1</h1>
+            <h1>Good Food</h1>
+        </div>
+        <div class="features">
+            <h1>2</h1>
+            <h1>Cozy Bunks</h1>
+        </div>
+        <div class="features">
+            <h1>3</h1>
+            <h1>Friendly Folks</h1>
+        </div>
+    </div>
+
+    <!-- BOOKINGS -->
+    <div class="booking">
+        <h1>Book your stay</h1>
+        <a href="tel:+" class="contact"
+        ><i class="fa-solid fa-phone"></i> Phone</a
+      >
+      <input type="text" name="datefilter" value="" />
+    </div>
+
+    <!-- REVIEWS. Use google api here: -->
+    <div class="googleReviews">
+        <div class="features">
+            <img src="./assets/people1.jpg"/>
+            <h1>XXXXX</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quam rem ratione ea, eum laboriosam.</p>
+        </div>
+        <div class="features">
+            <img src="./assets/people1.jpg"/>
+            <h1>XXXXX</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quam rem ratione ea, eum laboriosam.</p>
+        </div>
+        <div class="features">
+            <img src="./assets/people1.jpg"/>
+            <h1>XXXXX</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quam rem ratione ea, eum laboriosam.</p>
+        </div>
+
+    </div>
+
+    <!-- TRAFFIC -->
+    <div class="traffic">
+        <h1>1300+ happy guests</h1>
+        <div style="width: 400px;"><canvas id="acquisitions"></canvas></div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <h1><i class="fa-solid fa-phone"></i> Phone</h1>
+        <h1><i class="fa-brands fa-whatsapp"></i> WhatsApp</h1>
+        <h1><i class="fa-brands fa-instagram"></i> Insta</h1>
+        <h1><i class="fa-brands fa-youtube"></i> Youtube</h1>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+<!-- Scripts for bookings calendar, includes Monent, Jquery, and dataRangePicker cdns -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <!-- Chart js script for busy hours line chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
