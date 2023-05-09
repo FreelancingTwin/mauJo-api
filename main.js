@@ -1,4 +1,13 @@
-const video = document.getElementsByClassName('video');
+const video = document.getElementsByTagName('video');
+
+Array.from(video).forEach(el => {
+  el.type = "video/mp4",
+  el.autoplay = "true",
+  el.loop = "true",
+  el.muted = "true",
+  el.playsInline = "true",
+  el.poster = "assets/logo.jpg"
+})
 
 Array.from(video).forEach(el => el.addEventListener('click', function() {
   // console.log(el)
@@ -7,6 +16,7 @@ Array.from(video).forEach(el => el.addEventListener('click', function() {
   } else {
     el.pause();
   }
+  // type="video/mp4" autoplay="true" loop="true" muted="true" playsInline="true" poster="assets/logo.jpg"
 }));
 
 
@@ -18,114 +28,25 @@ $(function() {
     endDate: moment().startOf('hour').add(72, 'hour'),
     locale: {
       format: 'M/DD hh:mm A'
-    }
+    },
   });
+
+// auto shows the calendar when page loads
+  // $('input[name="datefilter"]').data('daterangepicker').show();
 });
 
-
-//chart js for the busy timings graph
-// (async function() {
-//   const data = [
-//     { year: 2010, count: 10 },
-//     { year: 2011, count: 20 },
-//     { year: 2012, count: 15 },
-//     { year: 2013, count: 25 },
-//     { year: 2014, count: 22 },
-//     { year: 2015, count: 30 },
-//     { year: 2016, count: 28 },
-//   ];
-
-//   new Chart(
-//     document.getElementById('acquisitions'),
-//     {
-//       type: 'line',
-//       data: {
-//         labels: data.map(row => row.year),
-//         datasets: [
-//           {
-//             label: 'Busy hours',
-//             data: data.map(row => row.count),
-//             borderColor: 'green',
-//             // backgroundColor:"orange",
-//             fill:"origin",
-//             tension:.3,
-            
-//           }
-//         ]
-//       }
-//     }
-//   );
-// })();
-
-
-// const config = {
-//   type: 'bar',
-//   data: data,
-//   options: {
-//     responsive: true,
-//     plugins: {
-//       legend: {
-//         position: 'top',
-//       },
-//       title: {
-//         display: true,
-//         text: 'Chart.js Bar Chart'
-//       }
-//     }
-//   },
-// };
-
-// const DATA_COUNT = 7;
-// const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-
-// const labels = Utils.months({count: 7});
-// const data = {
-//   labels: labels,
-//   datasets: [
-//     {
-//       label: 'Fully Rounded',
-//       data: Utils.numbers(NUMBER_CFG),
-//       borderColor: Utils.CHART_COLORS.red,
-//       backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-//       borderWidth: 2,
-//       borderRadius: Number.MAX_VALUE,
-//       borderSkipped: false,
-//     },
-//     {
-//       label: 'Small Radius',
-//       data: Utils.numbers(NUMBER_CFG),
-//       borderColor: Utils.CHART_COLORS.blue,
-//       backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-//       borderWidth: 2,
-//       borderRadius: 5,
-//       borderSkipped: false,
-//     }
-//   ]
-// };
-
-// const actions = [
-//   {
-//     name: 'Randomize',
-//     handler(chart) {
-//       chart.data.datasets.forEach(dataset => {
-//         dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
-//       });
-//       chart.update();
-//     }
-//   },
-// ];
 
 // Retrieve the canvas element
 const ctx = document.getElementById('acquisitions').getContext('2d');
 
 // Define the data for the bar graph
 const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['9 am', '11 am', '1 pm', '3 pm', '5 pm', '7 pm', "9 pm", "11 pm", "1 am"],
     datasets: [{
-        label: 'Color Count',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Set the background color for the bars
-        borderColor: 'rgba(75, 192, 192, 1)', // Set the border color for the bars
+        label: 'Busy Hours',
+        data: [35, 40, 35, 35, 50, 60, 60, 50, 35],
+        backgroundColor: 'rgba(242, 174, 44, 0.2)', // Set the background color for the bars
+        borderColor: 'rgb(242, 174, 44)', // Set the border color for the bars
         borderWidth: 1, // Set the border width for the bars
         borderRadius: 100,
       borderSkipped: false,
@@ -144,3 +65,24 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+
+
+//RANDOMIZE GALLERY ELEMENTS
+function shuffleArray(array){
+  for(let i = array.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+const gallery = document.querySelector('.gallery');
+const elements = Array.from(gallery.querySelectorAll('img, video'));
+shuffleArray(elements);
+gallery.innerHTML = '';
+elements.forEach(el => {
+  gallery.appendChild(el),
+  el.style.height="fit-content",
+  el.style.objectFit="contain",
+  el.style.borderRadius="1rem"
+})

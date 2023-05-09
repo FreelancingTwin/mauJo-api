@@ -1,8 +1,20 @@
+@font-face {
+  font-family: "Melts Script Rough Sanscript";
+  src: url("./assets/fonts/Melts\ Script\ Rough\ Sanscript.ttf");
+}
+@font-face {
+  font-family: "Odin Rounded Regular";
+  src: url("./assets/fonts/Odin\ Rounded\ -\ Regular.otf");
+}
+
 :root{
-  --primaryColor: #f2ae2c;
+  --primaryColor: rgb(242, 174, 44);
   --secondaryColor: #101010;
   --customPadding: 1.5rem;
-  --customBorderRadius: 50%,;
+  --customBorderRadius: 1rem;
+  --titleFont: "Melts Script Rough Sanscript";
+  --secondaryFont: "Odin Rounded Regular";
+  --customMargin: 1rem;
 }
 
 *{
@@ -20,14 +32,33 @@ body{
 
 img{
   object-fit: cover;
-  
+  max-height: inherit;
+}
+
+video{
+  max-width: 90vw;
+  /* border-radius: var(--customBorderRadius); */
+  border-radius: 1rem;
+  max-height: 70vh;
+  /* margin: auto; */
 }
 
 a{
   text-decoration: none;
 }
 
-
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--titleFont);
+ display: inline-block;
+  rotate: -6.5deg;
+  overflow: visible;
+  margin: 1rem;
+  font-weight: 50;
+}
+p, a{
+  font-family: var(--secondaryFont);
+}
+/* NAVBAR SECTION */
 .nav{
   background: var(--secondaryColor);
   display: flex;
@@ -41,4 +72,208 @@ a{
 .nav>img{
   object-fit: cover;
   max-height: inherit;
+}
+
+
+/* ABOUT SECTION */
+.about{
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0 2rem 0;
+}
+
+.about>h1{
+  /* display: block; */
+  /* position: absolute; */
+}
+
+.about > video{
+  /* important cuz it gives the intro vid border radius idk why */
+  margin: auto;
+}
+
+/* SERVICES SECTION */
+.dim{
+  opacity: .2;
+  position: absolute;
+  font-size: 7rem;
+  /* z-index: 3; */
+  /* rotate: 0deg; */
+  top:-2rem;
+  margin: auto;
+  /* left: 33%; */
+  background:transparent;
+}
+
+.services{
+  display: flex;
+  flex-wrap: wrap;
+  /* background: green; */
+  justify-content: center;
+  overflow: visible;
+  margin: 0 0 2rem 0;
+}
+
+.features{
+  overflow: visible;
+  /* background: blue; */
+  margin: var(--customMargin);
+  position: relative;
+}
+
+.service{
+  background-color: transparent;
+}
+
+
+/* BOOKING SECTION AND CALENDAR */
+.booking{
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.title{
+  align-self: flex-start;
+}
+
+i{
+  background: var(--primaryColor);
+  color: var(--secondaryColor);
+}
+.contact{
+  background: var(--primaryColor);
+  color: var(--secondaryColor);
+  padding: 1rem;
+  border-radius: var(--customBorderRadius);
+  width: 50vw;
+  text-align: center;
+  font-size: 1rem
+}
+
+.datefilter{
+  background: var(--primaryColor);
+  color:var(--secondaryColor);
+  min-width: 70vw;
+  padding: var(--customPadding);
+  border: none;
+  border-radius: var(--customBorderRadius);
+  text-align: center;
+  font-family: var(--secondaryFont);
+  font-weight: 550;
+  font-size: 1.5rem;
+  padding-left: 2.5rem;
+  /* border: solid 1px var(--primaryColor); */
+}
+
+.datefilter .range-value{
+  background: var(--secondaryColor);
+}
+
+.daterangepicker{
+  border: var(--primaryColor) solid 1px;
+  background: var(--secondaryColor);
+}
+.daterangepicker .applyBtn, .daterangepicker .cancelBtn {
+  color: var(--secondaryColor);
+  background: var(--primaryColor);
+}
+
+button{
+  background: var(--primaryColor);
+  color:var(--secondaryColor);
+  font-family: var(--secondaryFont);
+  border: none;
+  border-radius: var(--customBorderRadius);
+  padding: .5rem;
+  font-size-adjust: inherit;
+}
+
+td.in-range, .calendar-table{
+  background-color: var(--primaryColor) !important;
+}
+
+td.active{
+  background-color: rgba(242,174,44, .6) !important;
+}
+
+td.off{
+  background-color: transparent !important;
+}
+
+.calendar-table{
+  border: var(--primaryColor) solid 1px !important;
+  border-radius: var(--customBorderRadius);
+}
+
+select.hourselect,
+select.minuteselect,
+select.ampmselect{
+  background: var(--secondaryColor) !important;
+  /* border-radius: var(--customBorderRadius); */
+  border-radius: calc(var(--customBorderRadius)*.3);
+  border: var(--primaryColor) solid 1px !important;
+}
+
+th> span{
+  background: var(--primaryColor);
+}
+
+.calendar{
+  position: relative;
+  background: transparent;
+}
+
+.calendar i {
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  font-size: 1.5rem;
+  /* margin-right: 1rem; */
+  transform: translateY(-60%);
+}
+
+
+/* BUSY HOURS GRAPH */
+
+.traffic{
+  /* background: green; */
+  margin: calc(var(--customMargin))+1rem 0;
+  /* margin-bottom: 2rem; */
+}
+.traffic h1{
+  rotate: 0deg;
+}
+
+.traffic canvas{
+  margin: 0 1rem;
+}
+
+
+/* FOOTER */
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  /* background: #000; */
+  justify-content: center;
+  margin: 2rem 0;
+  justify-content: space-evenly;
+  /* margin-bottom: 2rem; */
+}
+
+.footer i {
+  background: var(--secondaryColor);
+  color: var(--primaryColor);
+}
+
+.gallery{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
