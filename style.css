@@ -158,15 +158,18 @@ i{
 .datefilter{
   background: var(--primaryColor);
   color:var(--secondaryColor);
-  min-width: 70vw;
+  width: 70vw;
+  max-width: 70vw;
   padding: var(--customPadding);
   border: none;
   border-radius: var(--customBorderRadius);
   text-align: center;
   font-family: var(--secondaryFont);
-  font-weight: 550;
-  font-size: 1.5rem;
+  font-weight: 600;
+  /* font-size: .5rem; */
+  /* font-size-adjust: .5; */
   padding-left: 2.5rem;
+  margin-top: .3rem;
   /* border: solid 1px var(--primaryColor); */
 }
 
@@ -276,4 +279,37 @@ th> span{
   gap: 1rem;
   align-items: center;
   justify-content: center;
+}
+
+.gallery video{
+  max-height: 30vh;
+}
+
+/* google reviews */
+
+/* ${imgElement}
+        <p>${"⭐".repeat(Math.floor(review.rating))}</p>
+        <p>${review.text}</p> */
+
+.reviewElement{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: var(--customMargin);
+  margin-bottom: 2rem;
+  /* flex-direction: column; */
+  /* position: relative; */
+}
+
+.reviewElement img{
+  /* position: absolute; */
+  /* opacity: .5; */
+  height: 50px;
+  object-fit: cover;
+  display: inline-block;
+  margin: .5rem
+}
+
+.reviewElement p {
+  display: block;
 }
