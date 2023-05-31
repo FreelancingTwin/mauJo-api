@@ -94,7 +94,7 @@ const fetchReviews = () => {
   // fetch('http://localhost:3000/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
 
   //PRODUCTION ENV, USES DOMAIN
-  fetch('http://maujo.surge.sh:8080/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
+  fetch('https://maujo.netlify.app:8080/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
   .then(response => response.json())
   .then(data => {
     // Process the received data from the Google Places API
