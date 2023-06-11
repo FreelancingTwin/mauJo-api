@@ -17,9 +17,10 @@ A list of technologies used within the project:
 * [Cors](https://www.npmjs.com/package/cors): Version 2.8.5 
 * [Express](https://www.npmjs.com/package/express): Version 4.18.2
 * [Node-fetch](https://www.npmjs.com/package/node-fetch): Version 3.3.1
-* [DateRangePickerCalendar](https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css)(https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): For the bookings Calendar css and behaviour
+* [DateRangePickerCalendarCssCdn](https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css)
+*[DateRangePickerCalendarJSCdn](https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): For the bookings Calendar css and behaviour
 * [Jquery](https://cdn.jsdelivr.net/jquery/latest/jquery.min.js): Dependency for the DateRangePicker cdn, helps write behaviour.
-* [MomentJs] (https://cdn.jsdelivr.net/momentjs/latest/moment.min.js): Dependency for DateRangePicker, gives times.
+* [MomentJs](https://cdn.jsdelivr.net/momentjs/latest/moment.min.js): Dependency for DateRangePicker, gives times.
 * [ChartJs](https://cdn.jsdelivr.net/npm/chart.js): For the Bar Graphs.
 * [GoogleMapsPlacesAPI](The Horror! Need help with debugging pls) 
 * [FontAwesome](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css): Version 6.4.0. For Icons. 
