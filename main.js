@@ -91,10 +91,10 @@ let reviews = [];
 const fetchReviews = () => {
 
   //development env, uses localhost
-  // fetch('http://localhost:3000/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
+  // fetch('http://localhost:8080/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
 
   //PRODUCTION ENV, USES DOMAIN
-  fetch('https://maujo.netlify.app:8080/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
+  fetch('https://maujo.netlify.app/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
   .then(response => response.json())
   .then(data => {
     // Process the received data from the Google Places API
