@@ -26,11 +26,12 @@ A list of technologies used within the project:
 ## Installation
 *** 
 ```
-$ ***git clone git@github.com:FreelancingTwin/mauJo.git*** 
-$ cd into the maujo folder
+$ git clone git@github.com:FreelancingTwin/mauJo.git 
+$ cd maujo
 $ npm install
-$ (Install live server VS code extension and) go live.
 ```
+(Install live server VS code extension and) go live.
+
 Side information: I can't seem to make the google api work in production env. Must be the hosting provider Netlify, but not sure. Please message me if you know why.
 <!-- ## Collaboration -->
 ***
@@ -42,8 +43,8 @@ Side information: I can't seem to make the google api work in production env. Mu
 ## Bugs
 ***
 1. **Server won't fetch google api in production**
-So it works fine in development. When I host it, I have to change the fetch url to domain name. It kinda goes off. Around Lines 97 in main.js. HELPPPP! 
+>So it works fine in development. When I host it, I have to change the fetch url to domain name. It kinda goes off. Around Lines 97 in main.js. HELPPPP! 
 2. __Video tags won't autoplay on load sometimes__ 
-On some browsers* The video tags default to the poster. If you know fixes, I'm ears.
+>On some browsers* The video tags default to the poster. If you know fixes, I'm ears.
 3. **Fonts won't get past CORS on Netlify**
-So, again, works in development, AND production, works with a different hosting provider 'surge'. visit ***maujo.surge.sh*** to see the supposed fonts. But doesn't work with netlify.
+>So, again, works in development, AND production, works with a different hosting provider 'surge'. visit ***maujo.surge.sh*** to see the supposed fonts. But doesn't work with netlify.
