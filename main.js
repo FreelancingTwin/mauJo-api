@@ -94,7 +94,7 @@ const fetchReviews = () => {
   // fetch('http://localhost:8080/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
   
   //PRODUCTION ENV, USES DOMAIN
-  fetch('https://https://apitouibleshooting--maujo.netlify.app//google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
+  fetch('https://apitouibleshooting--maujo.netlify.app/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
   .then(console.log('trying to fetch data.'))
   .then(response => response.json())
   .then(data => {
