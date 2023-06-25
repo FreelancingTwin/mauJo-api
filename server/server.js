@@ -1,12 +1,14 @@
 import express from 'express'
 import fetch from 'node-fetch'
 import cors from 'cors'
+import 'dotenv/config'
 
 const app = express();
-const PORT = 8080; // Choose a port for your server
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(cors())
+
 
 app.get('/google-places', async (req, res) => {
   const { placeId, apiKey } = req.query;
