@@ -86,6 +86,7 @@ elements.forEach(el => {
 })
 
 
+const reviewsContainer = document.getElementById('googleReviews');
 //MAPS INTEGRATION:
 const fetchReviews = () => {
   
@@ -93,36 +94,36 @@ const fetchReviews = () => {
   // fetch('http://localhost:8080/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
   
   //PRODUCTION ENV, USES DOMAIN
-  fetch('https://maujo.netlify.app/google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
+  fetch('https://https://apitouibleshooting--maujo.netlify.app//google-places?placeId=ChIJJeLfYmCzBTkRcSVrksWXIcQ&apiKey=AIzaSyDDobybAgArjzTZi_qe991167vHjm-vSMY')
+  .then(console.log('trying to fetch data.'))
   .then(response => response.json())
   .then(data => {
+    console.log('checkpoint 1 of 2. i have the data', data)
     // Process the received data from the Google Places API
     let reviews = [];
     const freshReviews = data.result.reviews
     reviews.push(...freshReviews)
-    return reviews;
+
+    console.log("reviews populated! checkpoint 2 of 2:", reviews)
+    reviews && reviews.forEach(review => {
+      const reviewElement = document.createElement('div');
+      reviewElement.classList.add('reviewElement')
+  const absoluteUrl = review.profile_photo_url;
+  const imageSrc = `src=${absoluteUrl}`;
+  const imgElement = `<img ${imageSrc} alt="Profile Photo">`;
+  
+      reviewElement.innerHTML = `
+        ${imgElement}
+        <p>${"⭐ ".repeat(Math.floor(review.rating))}</p>
+        <br/>
+        <p>${review.text}</p>
+      `;
+      reviewsContainer.appendChild(reviewElement);
+    });
   })
   .catch(error => {
     console.error('Error:', error);
   });
 }
 
-
- fetchReviews().then(reviews => {
-  const reviewsContainer = document.getElementById('googleReviews');
-  reviews.forEach(review => {
-    const reviewElement = document.createElement('div');
-    reviewElement.classList.add('reviewElement')
-const absoluteUrl = review.profile_photo_url;
-const imageSrc = `src=${absoluteUrl}`;
-const imgElement = `<img ${imageSrc} alt="Profile Photo">`;
-
-    reviewElement.innerHTML = `
-      ${imgElement}
-      <p>${"⭐ ".repeat(Math.floor(review.rating))}</p>
-      <br/>
-      <p>${review.text}</p>
-    `;
-    reviewsContainer.appendChild(reviewElement);
-  });
- }).catch(err => console.log(err));
+ fetchReviews();
