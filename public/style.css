@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Melts Script Rough Sanscript";
-  src: url("./assets/fonts/Melts\ Script\ Rough\ Sanscript.ttf");
+  src: url("Melts\ Script\ Rough\ Sanscript.ttf");
 }
 @font-face {
   font-family: "Odin Rounded Regular";
-  src: url("./assets/fonts/Odin\ Rounded\ -\ Regular.otf");
+  src: url("Odin\ Rounded\ -\ Regular.otf");
 }
 
 :root{

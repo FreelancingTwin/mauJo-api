@@ -127,3 +127,5 @@ const fetchReviews = () => {
 }
 
  fetchReviews();
+
+ console.log('ya')
