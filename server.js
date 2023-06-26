@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
   next();
 });
 app.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname, "/index.html"))
+  res.sendFile("/index.html")
 })
 app.get('/google-places', async (req, res) => {
   const { placeId, apiKey } = req.query;
