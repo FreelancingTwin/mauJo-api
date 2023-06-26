@@ -8,8 +8,8 @@ const PORT = process.env.PORT;
 const __dirname = path.resolve(path.dirname(''));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'assets')));
-app.use(express.static(path.join(__dirname, 'assets/fonts')));
+app.use(express.static(path.join(__dirname, 'public/assets')));
+app.use(express.static(path.join(__dirname, 'public/assets/fonts')));
 const corsOptions = {
   // origin: 'http://localhost:8080/',
   origin: "*",
