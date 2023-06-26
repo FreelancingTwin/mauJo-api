@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT;
 const corsOptions = {
   // origin: 'http://localhost:8080/',
-  origin: "*",
+  origin: "https://apitouibleshooting--maujo.netlify.app/",
   credentials: true,
   optionSuccessStatus: 200
 }
