@@ -2,7 +2,7 @@ import express from 'express'
 import fetch from 'node-fetch'
 import cors from 'cors'
 import 'dotenv/config'
-// import path from 'path'
+import path from 'path'
 const app = express();
 const PORT = process.env.PORT;
 const corsOptions = {
@@ -22,9 +22,9 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-// const __dirname = path.resolve(path.dirname(''));
+const __dirname = path.resolve(path.dirname(''));
 // app.use(express.json());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/fonts')));
 // app.use(express.static(path.join(__dirname, 'public/assets')));
 // app.use(express.static(path.join(__dirname, 'public/assets/fonts')));
 
@@ -46,6 +46,23 @@ app.get('/google-places', async (req, res) => {
   }
 });
 
+app.get('/font1', (_,res)=>{
+  try {
+    res.sendFile(path.join(__dirname, '/fonts/Melts Script Rough Sanscript.ttf'))
+  } catch (error) {
+    console.error("error loading fonts", error)
+  }
+});
+
+app.get('/font2', (_,res)=>{
+  try {
+    res.sendFile(path.join(__dirname, '/fonts/Odin Rounded - Regular.otf'))
+  } catch (error) {
+    console.error("error loading fonts", error)
+  }
+});
+
+
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`, __dirname);
 });
